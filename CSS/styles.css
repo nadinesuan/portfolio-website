@@ -1,0 +1,295 @@
+body {
+    background-color: #42463F;
+    font-family: 'Abel' , sans-serif; 
+    font-weight: 400;
+    font-size: 16px;
+      /* Sets the font size to 16px */
+      line-height: 1.6;
+      /* Sets the line-height to 1.6 */
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+a {
+    color: #ffebcd;
+}
+
+a:hover, a:focus {
+    /* No underlining when hovering over a link */
+    text-decoration: none;
+}
+
+a:visited {
+    /* visited line */
+    color: #ffebcd;
+}
+
+a:active {
+    /* selected link */
+    color: #ffebcd;
+}
+
+button {
+    /* overwrites browser defaults and resets the border */
+    border:none;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    background-color:#556b2f;
+    color:#ffebcd;
+    text-decoration: none;
+    /* adds spacing to the button (this will be discussed more in-depth later? */
+    padding: 10px;
+    border-radius: 3px;
+    /* gives the button a bottom border with a width of 2px, a type of solid, and a color RGBA format */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3)
+}
+
+button:hover, button:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+}
+
+.button__secondary {
+    background-color:#556b2f;
+    color:#ffebcd;
+}
+
+.navigation-list__item--active {
+    text-decoration: none;
+}
+
+.page-header {
+    display: flex;
+    width: 95%;
+}
+
+.page-header__item {
+    flex: 0 2 300px;
+    margin-left: 20px;
+}
+
+.page-header__item:last-child {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.navigation-list {
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.navigation-list li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.navigation-list__item--active {
+    text-decoration: none;
+}
+
+.profile__portrait {
+    float: left;
+    width: 300px;
+    margin-right: 40px;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+
+.page-footer {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 5%
+}
+
+.profile {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid__item {
+    background-color:#42463F;
+}
+
+.profile1 {
+    text-align: center;
+    padding: 5%;
+}
+
+.about-profile {
+    margin: auto 0;
+}
+
+/*
+.grid__item {
+    display: inline-block;
+    width: 33%;
+}*/
+
+@supports (display: grid) {
+    .grid {
+        display: grid;
+        grid-template-columns: 300px 300px 300px;
+        text-align: center;
+        padding: 5% 17%; 
+        grid-gap: 30px;
+    }
+}
+
+.grid__item {
+    background-color:#808000;
+}
+
+.work-header {
+    margin-left: 10%;
+}
+
+.about-profile {
+    margin-left: 10%;
+}
+
+.about-body {
+    margin: 1% 5%;
+    text-align: center;
+}
+
+.table__1 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-style: ridge;
+    border-color: black;
+}
+
+@media all and (max-width: 750px) {
+    /* share code */
+}
+@media all and (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media all and (max-width: 750px) {
+    .grid {
+        grid-gap: 10px;
+    }
+    .grid__item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: 22px;
+    }
+}
+
+.button, button {
+    /* overwrites browser defaults and resets the border */
+    /* resets the border */
+    border: none;
+    display: inline-block;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* styles the button */
+    background-color: #556b2f;
+    color: #ffebcd;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    /* width of the border, type, color */
+    border-bottom: 2px solid rgba (0, 0, 0, 0.3);
+    transition-duration: 0.9s;
+    transition-property: opacity;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+}
+
+@keyframes color-change {
+    0% {
+        fill: #edc655;
+    }
+    50% {
+        fill: #f76414;
+    }
+    100% {
+        fill: #f76414;
+    }
+}
+
+.berlin-illustration {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.sun {
+    animation-duration: 4s;
+    animation-name: color-change;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+@keyframes cloud-move {
+    from {
+        transform: translate(0, 50px);
+    }
+    to {
+        transform: translate(200px, 50px);
+    }
+}
+
+.cloud-front {
+    animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+    from {
+        transform: translate(446px, 48px);
+    }
+    to {
+        transform: translate(100px, 48px);
+    }
+}
+
+.cloud-back {
+    animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+.form1 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
